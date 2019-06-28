@@ -1,0 +1,22 @@
+Benchmark                         Time             CPU   Iterations
+-------------------------------------------------------------------
+BM_ThreeVectorCreation        0.307 ns        0.307 ns   1000000000
+BM_TVector3Creation            5.19 ns         5.19 ns    133430946
+BM_EigenMatrixMult3x3          19.4 ns         19.4 ns     35923476
+BM_TMatrixDMult3x3              123 ns          123 ns      5629651
+BM_EigenMatrixMult4x4          34.5 ns         34.5 ns     20263442
+BM_TMatrixDMult4x4              204 ns          204 ns      3378448
+BM_EigenMatrixMult7x7           127 ns          127 ns      5300252
+BM_TMatrixDMult7x7              711 ns          711 ns       886694
+BM_EigenMatrixInv3x3           9.70 ns         9.70 ns     71208960
+BM_TMatrixDInv3x3               163 ns          163 ns      4269641
+BM_EigenMatrixInv4x4           17.0 ns         17.0 ns     41066696
+BM_TMatrixDInv4x4               263 ns          263 ns      2640139
+BM_EigenMatrixInv7x7           52.6 ns         52.6 ns     12996428
+BM_TMatrixDInv7x7               824 ns          824 ns       765431
+BM_Eigen_Matrix_4x4_vec4       21.4 ns         21.4 ns     32342846
+BM_Root_Matrix4x4_vec4          111 ns          111 ns      6229242
+BM_Eigen_Norm                  8.88 ns         8.88 ns     77386565
+BM_Root_Norm                   7.17 ns         7.17 ns     95122386
+BM_Eigen_Vec4xVec4             8.68 ns         8.68 ns     79812210
+BM_Root_Vec4xVec4              71.0 ns         71.0 ns      8644828
