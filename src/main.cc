@@ -9,6 +9,7 @@
 #include <KineTypedefs.h>
 #include <KineTools.h>
 #include <TLorentzVector.h>
+#include <Math/SMatrix.h>
 
 #define BENCH "notmatterword"
 #include <iostream>
@@ -277,6 +278,27 @@ static void BM_TMatrixDInv7x7(benchmark::State &state)
   }
 }
 BENCHMARK(BM_TMatrixDInv7x7);
+
+typedef ROOT::Math::SMatrix<double, 7> SMatrix77;
+
+static void BM_SMatrixDInv7x7(benchmark::State &state)
+{
+  const int size = 7;
+  SMatrix77 A;
+  int k = 0;
+  for (auto _ : state)
+  {
+    for (int i = 0; i < size; ++i)
+    {
+      for (int j = 0; j < size; ++j)
+      {
+        A(i, j) = arr[++k % 1000];
+      }
+    }
+    benchmark::DoNotOptimize(A.Invert());
+  }
+}
+BENCHMARK(BM_SMatrixDInv7x7);
 
 
 static void BM_Eigen_Matrix_4x4_vec4(benchmark::State &state)
