@@ -1,19 +1,3 @@
-
-
-
-#include <benchmark/benchmark.h>
-
-// Define benchmark
-static void BM_SomeFoo(benchmark::State& state) {
-    for (auto _ : state) {
-        foo(); // performance measured code
-    }
-}
-// Register the function as a benchmark
-BENCHMARK(BM_StringCreation);
-
-BENCHMARK_MAIN();
-
 //g++ main.cpp -std=c++11 -lbenchmark -lpthread -O2 -o benchmark
 // 3, 4, 6, 7
 
@@ -29,19 +13,6 @@ BENCHMARK_MAIN();
 #define BENCH "notmatterword"
 #include <iostream>
 #include <vector>
-
-#include <Eigen/Dense>
-
-Matrix3f m;
-m << 1, 2, 3,
-     4, 5, 6,
-     7, 8, 9;
-std::cout << m;
-
-Output:
-1 2 3
-4 5 6
-7 8 9
 
 std::vector<double> arr;
 #ifdef BENCH
